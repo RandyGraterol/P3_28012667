@@ -1,0 +1,380 @@
+       *{
+          box-sizing: border-box;
+          padding:0;
+          margin:0;
+         }
+        @font-face{
+          font-family:'Gamer';
+          src:url('/fuentes/Gamer.ttf');
+        }
+        @font-face{
+          font-family:'efectos';
+          src:url('/fuentes/RainyStars_PERSONAL_USE_ONLY.otf');
+        }
+         body{
+          color:white;
+          background-image:url('/img/codigo.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-attachment:fixed; 
+         }
+         h1{
+          font:70px 'Gamer';
+          text-align: center;
+          line-height:100px;
+          color:gold;
+         }
+         #grid-container{
+          background:rgba(0,0,0,0.7);
+          margin:25px auto;
+          border:1px solid white;
+          border-radius: 20px;
+          width:90%;
+          display:flex;
+          flex-direction: column;
+          justify-content:space-between;
+          align-items:center;
+          align-content: center; 
+         }
+         legend{
+          background:gold;
+          color:black;
+          cursor:pointer;
+          border-radius:20px;
+          padding:10px;
+         }
+         fieldset{/**/
+          color:white;
+          font:30px 'Gamer';
+          width:80%;
+          margin-bottom:20px;
+          border-radius:10px;
+          transition:all 1s;
+         }
+         fieldset:hover{
+          background:rgba(0,0,0,0.6);
+          box-shadow:gold 0 0 25px;
+          
+         }
+         
+        
+      .title{
+        animation:colorr 3s alternate infinite;
+        animation-delay:.2s;
+        font:40px 'efectos';
+      }
+      form{
+        margin-top:10px;
+        display:flex;
+        flex-direction: column;
+      }
+       #p{
+        font-size: 30px;
+        margin-bottom:20px;
+       }
+       input{
+        text-align: center;
+        border-radius:10px;
+        margin-bottom:10px;
+        height:5vh;
+       }
+       #submit{
+        width: 30%;
+        margin:5px auto;
+        cursor:pointer;
+       }
+       #fieldset1{
+        padding-left:5%;
+        padding-top:5vh; 
+       }
+       #fieldset2{
+        padding-left:5%;
+        padding-top:5vh; 
+       }
+
+       #fieldset3{
+        padding-left:5%;
+        padding-top:5vh; 
+       }
+       #fieldset4{
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         align-content: center;
+         padding-left:5%;
+         padding-top:5vh;
+       }
+       #fieldset5{
+        padding-left:5%;
+       }
+      #fieldset6{
+          display:flex;
+          flex-wrap:wrap;
+          justify-content:center;
+          align-items:center;
+          align-content: center;
+      }
+     
+      .color{
+        background:rgb(77,249,249);
+      }
+      .reducir_aumentar{
+       height: 7vh;
+        overflow:hidden;
+        color:black;
+      }
+      .reducir_aumentar:hover{
+        background:rgba(0,0,0,0.7);
+        border:3px solid grey;
+        overflow:hidden;
+        box-shadow:rgb(77,249,249) 30px 14px 25px;
+        opacity:0.7;
+      }
+      #legend6{
+       margin-left:45px; 
+      }
+      select{
+       width:35%;
+      }
+      .greenn{
+        color:gold;
+        animation:color 3s alternate infinite;
+        animation-delay:.2s;
+      }
+       @keyframes color{
+          0%{
+           color:green;
+            }
+            50%{
+            color:gold;
+            }
+            100%{
+            color:green;
+            }
+       }
+       @keyframes colorr{
+          0%{
+           color:gold;
+            }
+            50%{
+            color:rgb(77,249,249);
+            }
+            100%{
+            color:gold;
+            }
+       }
+       #ol{
+      margin-left:15px;
+      margin-bottom:25px;
+       }
+       #centrarDiv{
+        margin-left:20px;
+        margin-bottom:30px;
+       }
+       #icon{
+       
+        width:20%;
+        margin:10px auto;
+        grid-template-columns:auto auto auto; 
+        background:transparent;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+       
+
+       }
+       #hobbies{
+         margin-left: 10px;
+         margin-bottom: 40px;
+       }
+       #experiencia{
+        margin-left: 10px;
+        margin-bottom: 40px;
+       }
+
+      .span{
+        font:50px 'efectos';
+        animation:colorr 3s alternate infinite;
+        animation-delay:.2s;
+      }
+      #container-img-icon{
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        width: 45%;
+      }
+         #imggg{
+          border:2px solid white;
+          margin-top:35px;
+          margin-left:35px;
+          margin-right:25px;
+          border-radius: 50%;
+          width: 40%;
+          height: 25vh;
+         }
+
+         @media screen and (max-width:480px){
+           img{
+          width:5px;
+          height:5px;
+         }
+         #legend6{
+          margin-left:20px;
+         }
+         .progress{
+          width:50%;
+         }
+         input{
+          height: 10%
+         }
+         progress{
+          width:30%;
+         }
+         #centrarDiv{
+         margin:0;
+       }
+
+       }
+
+         #facebook{
+          text-decoration: none;
+          color:blue;
+          margin-right:10px;
+         }
+         #Instagram{
+          text-decoration: none;
+          color:violet;
+          margin-right:10px;
+         }
+         #Whatsapp{
+          text-decoration: none;
+          color:green;
+          margin-right:10px;
+         }
+         
+         #redes{
+          margin-top:20px;
+          margin-bottom:10px;
+
+         }
+         #Imagenes-p{
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          align-content: center;
+          justify-content: space-around;
+         }
+         /*//////////////////////////////////////////////*/
+         #particulas{
+          text-decoration: none;
+          color: black;
+           background:gold;
+           border-radius: 20px;
+           padding: 5px; 
+         }
+         #Rompecabezas{
+          text-decoration: none;
+          color: black;
+           background:gold;
+           border-radius: 20px;
+           padding: 5px; 
+         }
+         #animal{
+          text-decoration: none;
+          color: black;
+           background:gold;
+           border-radius: 20px;
+           padding: 5px; 
+         }
+         #Imagenes-p{
+          display:flex;
+          align-items: center;
+          align-content: center;
+          justify-content:space-around;
+         }
+         footer{
+          font-size:20px;
+         }
+        
+         img{
+          border-radius:5px;
+          width:100px;
+          height:80px;
+         }
+         #particula-flex{
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         align-content: center;
+         align-items: center;
+         margin-bottom: 20px;
+         }
+         #particula-flex:hover{
+          border-radius:50%;
+          box-shadow:rgb(255, 215, 0) 30px 14px 25px;
+         }
+        
+         #rompecabezas-flex{
+          display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         align-content: center;
+         align-items: center;
+         margin-bottom: 20px;
+         }
+         #rompecabezas-flex:hover{
+          border-radius:50%;
+          box-shadow:rgb(255, 215, 0) 30px 14px 25px;
+         }
+         #animales-flex{
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         align-content: center;
+         align-items: center;
+         margin-bottom: 20px;
+         }
+         #animales-flex:hover{
+          border-radius:50%;
+          box-shadow:rgb(255, 215, 0) 30px 14px 25px; 
+         }
+       #educacionn{
+        display:flex;
+        align-content: center;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+       }
+      progress{
+        margin-left:15px; 
+       }
+       input:hover{
+        background:rgb(255, 215, 0);
+       }
+       #genero:hover{
+        background:rgb(255, 215, 0);
+       }
+       #clienteee{
+        color:white;
+       }
+       li{
+        margin:7px;
+       }
+       #p{
+        text-align:center;
+       }
+       .galeria{
+        margin:5px;
+        border:1px solid white;
+        transition:all 2s;
+       }
+       .galeria:hover{
+        transform:rotate(360deg) scale(2,2);
+        box-shadow:20px 15px 20px grey;
+       }
+       #datos{
+       font-size: 40px;
+       }
+

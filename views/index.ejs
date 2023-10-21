@@ -1,0 +1,84 @@
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta charset="iso-8559-1"/>
+  <meta name= "description" content="pagina de enseñanza"/>
+  <meta name="keywords" content="html5,javascript,diseño web"/>
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Portafolio</title>
+  </head>
+  <body>
+  <!--*****************************************-->
+  <h1><span class="title">****</span>Pagina de Inicio<span class="title">****</span></h1>
+  
+  <div id="grid-container">
+
+    <div id="container-img-icon">
+      <span class="span">*************</span><img src="/img/anonimous.png" id="imggg"><span class="span">*************</span>
+   </div>
+   <!--***************************************************************-->
+  <fieldset id="fieldset1" class="ubicar-F ubicar1">
+    <legend id="legend1" class="legenddd">Acerca de mi</legend>
+    <div id="centrarDiv">
+    <h2>Randis graterol</h2>
+     <ul id='datos'>
+       <li>CI: 28.012.667</li>
+       <li>Sección: 1</li>
+     </ul>
+    </div>
+  </fieldset>
+  <!--*****************************************-->
+
+  <!--*****************************************-->
+  <fieldset id="fieldset6" class="ubicar-F ubicar6">
+    <legend id="legend6" class="legenddd">Galeria de Imagenes</legend>
+
+  <img src="/img/o.png" class='galeria'>
+  <img src="/img/u.jpg" class='galeria'>
+  <img src="/img/e.jpg" class='galeria'>
+  <img src="/img/i.jpg" class='galeria'>
+  <img src="/img/f.png" class='galeria'>
+  <img src="/img/dos.jpg" class='galeria'>
+  <img src="/img/a.png" class='galeria'>
+
+  </fieldset>
+
+  </div>
+
+
+  <!--*****************************************-->
+  <script type="text/javascript"> 
+   let legend= document.querySelectorAll(".legenddd");
+//------------------------------------------------------------------
+let ubicar1= document.querySelector(".ubicar1");
+let ubicar2= document.querySelector(".ubicar2");
+let ubicar3= document.querySelector(".ubicar3");
+let ubicar4= document.querySelector(".ubicar4");
+let ubicar5= document.querySelector(".ubicar5");
+let ubicar6= document.querySelector(".ubicar6");
+/////////////////////////////////////////////////////////
+legend.forEach((elemento,index)=>{
+elemento.addEventListener("click",(e)=>{
+  elemento.classList.toggle("color");
+
+  if(e.target.id=="legend1"){
+    ubicar1.classList.toggle("reducir_aumentar");
+  }else if(e.target.id=="legend2"){
+    ubicar2.classList.toggle("reducir_aumentar");
+  }else if(e.target.id=="legend3"){
+    ubicar3.classList.toggle("reducir_aumentar");
+  }else if(e.target.id=="legend4"){
+    ubicar4.classList.toggle("reducir_aumentar");
+  }else if(e.target.id=="legend5"){
+    ubicar5.classList.toggle("reducir_aumentar");
+  }else{
+    ubicar6.classList.toggle("reducir_aumentar");
+  }  
+})
+})
+  //toggle
+ //-----------------------------------------------------
+  </script>
+  </body>
+</html>
