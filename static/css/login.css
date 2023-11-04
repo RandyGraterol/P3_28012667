@@ -1,0 +1,73 @@
+@font-face{
+          font-family:'dar';
+          src:url('/fuentes/GnarlyBoneBlack_PERSONAL_USE_ONLY.otf');
+        }
+body{
+	background-image:url('https://images.unsplash.com/photo-1563248870-e45d2e6df7ee?auto=format&fit=crop&q=80&w=1275&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+	background-size:cover;
+	background-attachment: fixed;
+}
+#login{
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items:center;
+	background:rgb(0,0,0,.3);
+	width:50%;
+	height:40vh;
+	margin:100px auto;
+	border-radius:10px 10px 10px 10px;
+	transition:all 1s;
+}
+#login:hover{
+	background:rgb(0,0,0,.7);
+	border:1px solid white;
+}
+label{
+	font-weight: bold;
+	font:30px 'dar';
+	color:white;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+h1{
+	margin-top:70px;
+	text-align:center;
+	font-weight: unset;
+	color:white;
+	font:40px 'dar';
+}
+form{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+input{
+padding:8px;
+text-align: center;
+}
+#iniciar{
+	margin-top:10px;
+	padding: 10px;
+	border-radius:10px 10px 10px 10px;
+    transition:all 1s;
+}
+#iniciar:hover{
+
+transform:translateY(-10px);
+
+}
+
+#otroLogin{
+	border:1px solid black;
+	width:60%;
+	margin:50px auto;
+	background:rgba(108, 114, 114,.7);
+	border-radius:15px 20px 15px 20px;
+	transition:all 1s;
+}
+#otroLogin:hover{
+	background:rgba(108, 114, 114,.9);	
+}
+

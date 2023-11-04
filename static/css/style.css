@@ -377,4 +377,29 @@
        #datos{
        font-size: 40px;
        }
+       #botones{
+        display:flex;
+        justify-content: flex-end;
+        align-items:center;
+        border:1px solid white;
+        border-left: none;
+        border-top: none;
+        height:15vh;
+        background:rgba(0,0,0,.8);
+
+       }
+       #admin{
+        margin-right:30px;
+        text-decoration:none;
+        font:30px 'efectos';
+        color:white;
+       }
+
+        #botones #admin{
+       transition: all 1s;
+       }
+
+       #botones #admin:hover{
+        transform:translateY(-10px);
+       }
 
