@@ -1,12 +1,33 @@
 //Librerias y dependencias
 require('dotenv').config();
+const multer = require('multer');
 const http = require('http');
 const express = require('express');
 const app = express();
+const bodyParser= require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
 const path = require('path');
-const baseDatosModels = require('./models/baseDeDatos.js');
+const baseDatos = require('./models/baseDatos.js');
+const utils = require('./utils/uploadImg.js');
 const {contrasena,admin} = process.env;
+let ext;
 let login= false;
+
+
+//--------------------------------------------------------------
+let storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './static/uploads')
+  },
+  filename: function (req, file, cb) {
+    ext = path.extname(file.originalname);
+    cb(null, file.fieldname + '-' + Date.now() + utils.getContentType(ext))
+  }
+})
+
+let upload = multer({ storage: storage });
+//---------------------------------------------------------------
+
 //recursos que se van a cargar en el server 
 app.use(express.static(__dirname+'/static'));
 
@@ -56,43 +77,43 @@ res.render('addImagen.ejs');
 });
 
 
-app.post('/addImagen',(req,res)=>{
-baseDatosModels.aggIMG(req,res);
+app.post('/addImagen',upload.single('img'),(req,res)=>{ 
+baseDatos.aggIMG(req,res);
 });
 
 
 app.post('/addPost',(req,res)=>{   
-baseDatosModels.aggDato(req,res);
+baseDatos.aggDato(req,res);
 });
 
 
 app.get('/productos',(req,res)=>{
-  baseDatosModels.mostrarProductos(req,res);
+  baseDatos.mostrarProductos(req,res);
 });
 //-------------------------------------------------------
 // GET /editar/:id
 app.get('/update/:id',(req, res) => {
-baseDatosModels.mostrarUpdate(req,res);
+baseDatos.mostrarUpdate(req,res);
 
 });
 //-------------------------------------------------------
 // POST /editar/:id
 app.post('/update/:id', (req, res) => {
- baseDatosModels.update(req,res);
+ baseDatos.update(req,res);
 });
 //-------------------------------------------------------
 // GET /eliminar/:id
 app.get('/delete/:id', (req, res) => {
- baseDatosModels.mostrarDelete(req,res);
+ baseDatos.mostrarDelete(req,res);
 });
 //-------------------------------------------------------
 // POST /eliminar/:id
 app.post('/delete/:id', (req, res) => {
- baseDatosModels.deletee(req,res);
+ baseDatos.deletee(req,res);
 });
 //------------------------------------------------------
 app.get('/categorias', (req, res) => {
- baseDatosModels.getCategorias(req,res);
+ baseDatos.getCategorias(req,res);
 });
 //-------------------------------------------------------
 app.get('/addCategorias', (req, res) => {
@@ -100,19 +121,19 @@ app.get('/addCategorias', (req, res) => {
 });
 //-------------------------------------------------------
 app.post('/addcategorias', (req, res) => {
- baseDatosModels.postCategorias(req,res);
+ baseDatos.postCategorias(req,res);
 });
 //-------------------------------------------------------
 app.get('/updateCategoria/:id',(req,res)=>{
- baseDatosModels.mostrarUpdateC(req,res);
+ baseDatos.mostrarUpdateC(req,res);
 });
 //-------------------------------------------------------
 app.post('/updateCategoria/:id',(req,res)=>{
-baseDatosModels.updateCateg(req,res);
+baseDatos.updateCateg(req,res);
 });
 //-------------------------------------------------------
 //Metodo para manejar rutas no encontradas
 app.get('/*',(req,res)=>{
-res.render('notfound.ejs')
+res.render('found.ejs')
 });
 //-------------------------------------------------------

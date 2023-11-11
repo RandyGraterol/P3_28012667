@@ -19,6 +19,8 @@
     form{
     	display: flex;
     	flex-direction: column;
+    	justify-content: center;
+    	align-items: center;
     	margin:80px auto;
     	width:40%;
     	border:1px solid black;
@@ -40,7 +42,7 @@
    }
    #destacado{
    	width:20%;
-   	border-radius: 15px 30px 20px 10px;
+   	border-radius:10px 10px 10px 10px;
    }
   #divDestacado{
   	border:1px solid black;
@@ -69,7 +71,10 @@
 #botones a:hover{
 transform: translateY(-10px);
 }
+
 	</style>
+
+
 </head>
 <body>
 
@@ -81,14 +86,16 @@ transform: translateY(-10px);
 
 <div id='divDestacado'>
 	
-<form action="/addImagen" method="post">
+<form action="/addImagen" method="post" enctype="multipart/form-data">
 	<label for='imagen'>Imagen</label>
+	
 	<input type="file" name="img" id="img" placeholder="Imagen">
+  
 	<label for="destacado">Destacado</label>
 	
 	<input type="text" name="destacado" placeholder="Destacado" id='destacado'>
 
-	<input type="submit" value="agg Imagen" id="destacado">
+	<input type="submit" value="add" id="destacado">
 </form>
 </div>
 
