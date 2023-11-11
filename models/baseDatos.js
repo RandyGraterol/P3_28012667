@@ -26,8 +26,8 @@ db.run(`
     codigo INTEGER NOT NULL,
     precio INTEGER NOT NULL,
     descripcion TEXT NOT NULL,
-    codigo TEXT NOT NULL,
-    cantidad TEXT NOT NULL,
+    color TEXT NOT NULL,
+    peso INTEGER NOT NULL,
     categoria_id INTEGER,
     FOREIGN KEY (categoria_id) REFERENCES categorias(id)
   )
@@ -44,12 +44,12 @@ db.run(`
 });
 
 function aggDato(req,res){
-const {nombre,codigo,precio,descripcion,calidad,cantidad} = req.body;
+const {nombre,codigo,precio,descripcion,color,peso,categoria} = req.body;
     
-const sql = `INSERT INTO productos(nombre, codigo, precio, descripcion, calidad, cantidad) 
-    VALUES (?, ?, ?, ?, ?, ?)`;
+const sql = `INSERT INTO productos(nombre, codigo, precio, descripcion, color, peso , categoria_id) 
+    VALUES (?, ?, ?, ?, ?, ? , ?)`;
 
-db.run(sql, [nombre, codigo, precio, descripcion, calidad, cantidad], err => {
+db.run(sql, [nombre, codigo, precio, descripcion, color, peso , categoria], err => {
     if (err) return console.error(err.message);
     console.log('Registros Ingresados Correctamente a la base de datos ');
     res.redirect('/productos');
@@ -59,7 +59,6 @@ db.run(sql, [nombre, codigo, precio, descripcion, calidad, cantidad], err => {
 function mostrarProductos(req,res){
  const sql = `SELECT * FROM productos`;
  db.all(sql,[],(err,rows)=>{
- console.log(rows,);
  if(err) return console.error(err.message);
  console.log('Leyendo Tabla productos...')
  res.render('productos.ejs',{modelo:rows});
@@ -80,11 +79,11 @@ function mostrarUpdate(req,res){
 function update(req,res){
   const id = req.params.id;
 
-  const {nombre,codigo,precio,descripcion,calidad,cantidad} = req.body;
+  const {nombre,codigo,precio,descripcion,color,peso,categoria} = req.body;
   
-  const sql = `UPDATE productos SET nombre = ?, codigo = ?, precio = ?, descripcion = ?, calidad = ?, cantidad = ? WHERE producto_id = ?`;
+  const sql = `UPDATE productos SET nombre = ?, codigo = ?, precio = ?, descripcion = ?, color = ?, peso = ?, categoria_id = ? WHERE producto_id = ?`;
 
-  db.run(sql, [nombre,codigo, precio,descripcion,calidad, cantidad,id], err => {
+  db.run(sql, [nombre,codigo, precio,descripcion,color, peso , categoria , id], err => {
   if (err) return console.error(err.message);
   console.log(`producto actualizado = Producto : ${id}`);
   res.redirect('/productos');
@@ -122,12 +121,14 @@ function deletee(req,res){
 
 //_-------------------------------------------------
 function aggIMG(req,res){
-const {destacado,img} = req.body;
-
+let ruta = req.file.path.split('\\');
+const file = `/${ruta[1]}/${ruta[2]}`;
+console.log(file);
+const {destacado} = req.body;
 const sql = `INSERT INTO imagenes(url,destacado) 
     VALUES (?,?)`;
 
-db.run(sql, [img,destacado], err => {
+db.run(sql, [file,destacado], err => {
     if (err) return console.error(err.message);
     console.log('URL de imagen Insertada Correctamente');
     res.redirect('/productos');
