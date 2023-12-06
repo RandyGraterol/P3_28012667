@@ -142,14 +142,16 @@ function aggIMG(req,res){
 const id = req.params.id;
 let ruta = req.file.path.split('\\');
 const file = `/${ruta[1]}/${ruta[2]}`;
+const file2 = req.file.path;
 const rutaAbsoluta = `${req.protocol}://${req.get('host')}${file}`;
+const rutaAbsoluta2 = `${req.protocol}://${req.get('host')}${file2}`;
 console.log('--ruta absoluta--',rutaAbsoluta);
 console.log(file);
 const {destacado} = req.body;
 const sql = `INSERT INTO imagenes(url,destacado,productoID) 
     VALUES (?,?,?)`;
 
-db.run(sql, [rutaAbsoluta,destacado,id], err => {
+db.run(sql, [rutaAbsoluta2,destacado,id], err => {
     if (err) return console.error(err.message);
     console.log('URL de imagen Insertada Correctamente');
     res.redirect('/productos');
