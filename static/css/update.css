@@ -104,37 +104,43 @@ h1{
 .flex-principal{
 	display:flex;
 	flex-direction:column;
-	height:75%;
+	height:70vh;
 	justify-content:center;
 	align-items:center;
 	color:white;
 	background:rgb(0,0,0,.7);
+
 }
 
 input{
 	height:5vh;
 	text-align:center;
-
+	margin-left: 20px;
 }
 #cancelar{
 	margin-top:20px;
 	height:10%;
+	transition:all 1s;
 }
 #editorcentrall{
 	display:flex;
+	flex-direction: column;
 	justify-content:center;
 	align-items: center;
 	height:40vh;
+	margin:50px;
 }
 #botonProductos{
-	background:rgb(229, 229, 229);
-	color:black;
+	 font:20px 'dar';
+	color:white;
 	text-decoration: none;
 	padding:6px;
 }
+
 label{
 	font-weight:bold;
 	font:30px 'dar';
+	margin-left: 20px;
 
 }
 #update{
@@ -172,7 +178,14 @@ transform: translateY(-10px);
 	padding:15px;
 	border-radius:15px 20px 15px 10px;
 	line-height:2px;
+	transition:all 1s;
+}
+#agg:hover{
+transform:translateY(-10px) scale(1.1);	
 }
 form{
 	height:40vh;
+}
+#crear{
+	margin-bottom: 90px;
 }

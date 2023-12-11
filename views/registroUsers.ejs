@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registro</title>
+	<style type="text/css">
+		*{
+		margin:0;
+		padding:0;
+		box-sizing:border-box;
+		}
+		@font-face{
+          font-family:'dar';
+          src:url('/fuentes/GnarlyBoneBlack_PERSONAL_USE_ONLY.otf');
+        }
+		h1{
+			display:flex;
+			justify-content: center;
+			align-items: center;
+			margin:50px auto;
+			width:13%;
+			font:40px 'dar';
+		}
+		form{
+			display:flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border:1px solid black;
+			margin:50px auto;
+			width: 40%;
+			padding: 20px;
+			height:70vh;
+		}
+		input{
+			padding:6px;
+			border-radius:10px ;
+			text-align: center;
+		}
+		label{
+			font:20px 'dar';
+			margin: 5px;
+		}
+		#registro{
+			cursor: pointer;
+			margin-top:20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Registro</h1>
+
+	<form action="/registroUsuariosPost" method="POST">
+
+		<label>Nombre</label>
+		<input type="text" name="nombre" required>
+
+        <label>Apellido</label>
+        <input type="text" name="apellido" required>
+
+        <label>Cedula</label>
+        <input type="number" name="cedula" required>
+
+        <label>Correo</label>
+        <input type="email" name="email" required>
+
+        <label>Contraseña</label>
+        <input type="password" name="contrasena" required>
+
+        <input type="submit" value='Registrar' id="registro">
+       <p style='margin-left:70%;margin-bottom:10px;'>Inicia sesion <a href="/loginUsers">Login</a></p>
+	</form>
+
+</body>
+</html>

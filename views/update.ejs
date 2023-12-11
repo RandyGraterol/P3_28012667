@@ -28,14 +28,14 @@
         
 <label for="nombre">Nombre</label>
 
-<input type="text" autofocus name="nombre" placeholder="Nombre"  value="<%=modelo.nombre%>" />
+<input type="text" autofocus name="nombre" value="<%=modelo.nombre%>" />
     </div>
 <!------------------------------------------>
 <div>
     
 <label for="codigo">Codigo</label>
 
-<input name="codigo" type="number" placeholder=" Codigo" value="<%=modelo.codigo%>" />
+<input name="codigo" type="number" value="<%=modelo.codigo%>" />
 
 <!--------------------------------------------->
 </div>
@@ -44,28 +44,38 @@
 <div>
 
 <label for="precio">Precio</label>
-<input type="number" name="precio" placeholder=" Precio" value="<%=modelo.precio%>">
+<input type="number" name="precio" value="<%=modelo.precio%>">
 
 </div>
 
 <div>
     
 <label for="descripcion">Descripcion</label>
-<input type="text" name="descripcion" placeholder=" Descripcion" value="<%=modelo.descripcion%>">
+<input type="text" name="descripcion" value="<%=modelo.descripcion%>">
 </div>
 <!----------------------------------------------------->
 
 <div>
 
-<label for="calidad">Calidad</label>
-<input type="text" name="calidad" placeholder=" Calidad" value="<%=modelo.calidad%>">
+<label for="color">Color</label>
+<input type="text" name="color" value="<%=modelo.color%>">
     
 </div>
 <!----------------------------------------------------->
 <div>
     
-<label for="cantidad">Cantidad</label>
-<input type="number" name="cantidad" placeholder=" Cantidad" value="<%=modelo.cantidad%>">
+<label for="peso">Peso</label>
+<input type="number" name="peso" value="<%=modelo.peso%>">
+</div>
+
+<div>
+    
+<label for="categoria">Categoria</label>
+<select id='categoria' name='categoria' required>
+    <option value="1">Categoria 1</option>
+    <option value="2">Categoria 2</option>
+    <option value="3">Categoria 3</option>
+</select>
 </div>
 <!----------------------------------------------------->
 <!--------------------------------------------------->
@@ -79,5 +89,5 @@
 </div>
 </form>
 </body>
-<%- include('footer') -%>
+
 </html>
