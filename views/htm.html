@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Comprar</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		h1{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 50px;
+		}
+
+		form{
+			border: 1px solid black;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			width: 40%;
+			height: 50vh;
+			margin: 50px auto;
+		}
+
+		#confirmarCancelar{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 20px;
+		}
+
+		#confirmarCancelar input{
+			margin-right: 30px;
+			cursor: pointer;
+		}
+
+		input{
+			padding: .2rem;
+			width: 69%;
+			text-align: center;
+			border: none;
+		}
+
+		#cantidad{
+			border: 1px solid black;
+			width: 30%;
+			border-radius: 10px;
+		}
+
+		.divColumn{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>¿Está seguro que desea realizar la compra?</h1>
+
+	<form>
+		<div class='divColumn'>
+			<label>Nombre de usuario</label>
+			<input type="text" name="nombre_de_usuario" value='<%= resultado.nombre_usuario%>' readonly>
+		</div>
+		
+		<div class='divColumn'>
+			<label>Cliente_id</label>
+			<input type="number" name="cliente_id" value='<%= resultado.id%>' readonly>
+		</div>
+
+		<div class='divColumn'>
+			<label>producto_id</label>
+			<input type="number" name="producto_id" value='<%= resultado.producto_id%>' readonly>
+		</div>
+
+		<div class='divColumn'>
+			<label>Cantidad</label>
+			<input type="number" name="cantidad" value='1' id='cantidad'>
+		</div>
+
+		<div class='divColumn'>
+			<label>Total_pagado</label>
+			<input type="number" name="total_pagado" value='<%= resultado.precio%>' id='total_pagado' readonly>
+		</div>
+
+		<div class='divColumn'>
+			<label>Ip_cliente</label>
+			<input type="text" name="ip_cliente" value='<%= ip.ipAddress%>' readonly>
+		</div>
+
+		<div id='confirmarCancelar'>
+			<input type="submit" value="Confirmar">
+			<input type="button" value="Cancelar" onclick="redireccionar()">
+		</div>
+	</form>
+
+	<script type="text/javascript">
+		function redireccionar(){
+			window.location.href = '/clientes';
+		}
+
+		const cantidad = document.getElementById('cantidad');
+		const totalPagadoInput = document.getElementById('total_pagado');
+		const valorOriginalTotalPagado = parseFloat(totalPagadoInput.value);
+
+		cantidad.addEventListener('input', function(){
+			const nuevaCantidad = parseInt(cantidad.value);
+
+			if (!isNaN(nuevaCantidad)) {
+				if (nuevaCantidad > valorOriginalCantidad) {
+					totalPagadoInput.value = parseFloat(totalPagadoInput.value) * 2;
+				} else if (nuevaCantidad < valorOriginalCantidad) {
+					totalPagadoInput.value = valorOriginalTotalPagado;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

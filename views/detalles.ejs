@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Detalles</title>
+	<style type="text/css">
+	 @font-face{
+            font-family:'fuenteC';
+            src:url(/fuentes/Gamer.ttf);
+           }
+           body{
+           	  background-color:rgb(180, 180, 180,.4); 
+
+           }
+		img{
+			width:25%;
+			height: auto;
+			margin:20px;
+		}
+		#contenedor{
+			display:flex;
+			justify-content: center;
+		 width: 80%;
+		 margin:70px auto;
+		}
+		h1{
+			text-align: center;
+			line-height:100px;
+			font:50px 'fuenteC';
+		}
+		a{
+			text-decoration:none;
+			color:black;
+			font:30px 'fuenteC';
+			margin-left:20px;
+		}
+		@media screen and (max-width: 720px){
+
+			#contenedor{
+				display:flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items:center;
+			}
+			.divSecundario{
+				display:flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			img{
+			width:70%;
+			height: auto;
+			margin:20px;
+		}
+
+		}
+	</style>
+</head>
+<body>
+  <h1>Detalles del producto</h1>
+
+   <div id='contenedor'>
+  <%for(let m = 0;m < imagenes.length;m++){ %>
+   <img src="<%= imagenes[m].url%>">
+
+   <div class='divSecundario'>
+   <p><strong>Nombre :</strong><%= imagenes[m].nombre%></p>
+   <p><strong>Codigo :</strong><%= imagenes[m].codigo%></p>
+   <p><strong>Precio :</strong><span style='color:green'><%= imagenes[m].precio%>$</span></p>
+   <p><strong>Descripcion :</strong><%= imagenes[m].descripcion%></p>
+   <p><strong>Color :</strong><%= imagenes[m].color%></p>
+   <p><strong>Peso :</strong><%= imagenes[m].peso%></p>
+   <p><strong>Categoria :</strong><%= imagenes[m].categoria_id%></p>
+   </div>
+  <% } %>
+   </div>
+   <a href="/clientes">Volver</a>
+
+</body>
+</html>

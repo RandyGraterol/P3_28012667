@@ -29,7 +29,7 @@
 <label for="nombre">Nombre</label>
 
 <input type="text" autofocus name="nombre" placeholder="Nombre" />
-    </div>
+</div>
 <!------------------------------------------>
 <div>
     
@@ -57,17 +57,26 @@
 
 <div>
 
-<label for="calidad">Calidad</label>
-<input type="text" name="calidad" placeholder=" Calidad">
+<label for="color">Color</label>
+<input type="text" name="color" placeholder="Color">
     
 </div>
 <!----------------------------------------------------->
 <div>
     
-<label for="cantidad">Cantidad</label>
-<input type="number" name="cantidad" placeholder=" Cantidad">
+<label for="peso">Peso</label>
+<input type="number" name="peso" placeholder="Peso">
 </div>
 <!----------------------------------------------------->
+<div>
+    
+    <label for="categoria">Categoria</label>
+    <select id='categoria' name='categoria' required>
+        <option value="1">Categoria 1</option>
+        <option value="2">Categoria 2</option>
+        <option value="3">Categoria 3</option>
+    </select>
+</div>
 <!--------------------------------------------------->
 
 <!----------------------------------------------------->
@@ -79,5 +88,5 @@
 </div>
 </form>
 </body>
-<%- include('footer') -%>
+
 </html>

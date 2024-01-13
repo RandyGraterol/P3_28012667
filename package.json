@@ -1,12 +1,23 @@
 {
   "dependencies": {
+    "axios": "^1.6.2",
+    "body-parser": "^1.20.2",
     "connect-multiparty": "^2.2.0",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "sqlite3": "^5.1.6"
+    "express-handlebars": "^7.1.2",
+    "express-recaptcha": "^5.1.0",
+    "ip": "^2.0.0",
+    "jade": "^1.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.7.2",
+    "sqlite3": "^5.1.6",
+    "sweetalert2": "^11.10.1"
   },
-  "name": "Angel",
+  "name": "Randis",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -14,7 +25,7 @@
     "start": "nodemon controllers.js"
   },
   "keywords": [],
-  "author": "Angel",
+  "author": "Randis",
   "license": "ISC",
   "description": ""
 }
