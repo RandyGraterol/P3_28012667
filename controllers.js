@@ -229,7 +229,7 @@ app.get('/comprar/:id',verifyToken,(req,res)=>{
   baseDatos.comprar(req,res);
 });
 //------------------------------------------------------
-app.post('/comprarPost',async (req,res)=>{
+app.post('/comprarPost',verifyToken,async (req,res)=>{
 baseDatos.comprarPOST(req,res);
 })
 //////////////////////////////////////////////////////
