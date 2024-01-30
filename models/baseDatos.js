@@ -824,7 +824,7 @@ const sql = `UPDATE usuarios SET password = ? WHERE nombre = ?`;
 de.run(sql,[passwordC,userName],e=>{
 
  if(e){
-  res.json({error:'No se pudo restablecer la contraseña User Incorrecto'});
+    console.error(e.message);
  }else{
   res.redirect('/loginUsers');
  }
