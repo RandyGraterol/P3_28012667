@@ -821,7 +821,7 @@ function restablecerPost(req,res){
 const {passwordC,userName} = req.body;
 
 const sql = `UPDATE usuarios SET password = ? WHERE nombre = ?`;
-de.run(sql,[passwordC,userName],e=>{
+db.run(sql,[passwordC,userName],e=>{
 
  if(e){
     console.error(e.message);
