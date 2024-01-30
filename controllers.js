@@ -350,20 +350,14 @@ app.get('/restablecer-contrasena',(req,res)=>{
 
 const token = req.query.token;
 const UserName = req.query.userName;
-
 const tokenCookies = req.cookies.securityToken;
-
-if(token == tokenCookies){
 res.render('restablecer.ejs',{user:UserName, og: {
       title: 'Smarphone Solution',
       description: 'Venta de Productos Telefonicos',
       image: 'https://www.pexels.com/es-es/foto/persona-sosteniendo-un-smartphone-android-samsung-blanco-6347724/',
       // Otros metadatos OGP que desees especificar
       }});
-}else{
-res.send('Usuario denegado');
-}
-
+  
 });
 //------------------------------------------------------
 app.post('/restablecer-contrasena',(req,res)=>{
