@@ -3,11 +3,16 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login</title>
+  <title><%= og.title %></title>
+  <meta name="description" content="<%= og.description %>">
+  <meta property="og:title" content="<%= og.title %>">
+  <meta property="og:description" content="<%= og.description %>">
+  <meta property="og:image" content="<%= og.image %>">
+	<link rel="icon" type="image/x-icon" href="/icon/ico.png" />
 	<link rel="stylesheet" type="text/css" href="/css/login.css">
 </head>
 <body>
- <h1 class="login">**Inicio de Sesion**</h1>
+ <h1 class="login">Inicio de Sesion</h1>
 <div id='otroLogin'>
 <div id="login">
 
@@ -22,6 +27,7 @@
 			<input type="submit" name="enviar" value="Login" id='iniciar'>	
 	
 	</form>
+
 </div>
 </div>
 </body>
