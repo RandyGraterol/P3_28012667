@@ -796,7 +796,7 @@ function enviarEmailRecuperacion(req,res){
 
   // Enviar el correo electrónico de recuperación de contraseña
   const mailOptions = {
-    from: 'tu_correo@gmail.com',
+    from: 'elrandygraterol@gmail.com',
     to: email,
     subject: 'Recuperación de contraseña',
     text: `Haz clic en el siguiente enlace para restablecer tu contraseña: ${recoveryURL}`
