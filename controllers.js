@@ -9,7 +9,6 @@ const bodyParser= require('body-parser');
 //app.use(bodyParser.urlencoded({extended: true}));
 const path = require('path');
 const utils = require('./utils/uploadImg.js');
-let ext;
 const port = 3000;
 
 //---------------------------------------------------------------
