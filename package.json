@@ -13,7 +13,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon controllers.js"
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "Randis",
